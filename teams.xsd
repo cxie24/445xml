@@ -1,0 +1,44 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Teams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Team" maxOccurs="unbounded" minOccurs="15">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="Name"/>
+              <xs:element type="xs:string" name="College"/>
+              <xs:element type="xs:string" name="Conference"/>
+              <xs:element name="Quarterback" maxOccurs="unbounded" minOccurs="2">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="First"/>
+                          <xs:element type="xs:string" name="Last"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:byte" name="Number"/>
+                    <xs:element type="xs:string" name="QBR"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="Height" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Schedule">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Wk1"/>
+                    <xs:element type="xs:string" name="Wk2"/>
+                    <xs:element type="xs:string" name="Wk3"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="Rank" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
